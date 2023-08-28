@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>Add new clothing</title>
+                <script src="assets/js/vendor/color-thief.min.js"></script>
+                <script src="assets/js/capture.js"></script>
+                <script src="assets/js/color-detect.js"></script>
+                <script type="module">
+                        import { backgroundRemove } from './assets/js/bg-remove.js';
+                        window.backgroundRemove = backgroundRemove;
+                </script>
+                <style>
+                        #canvas, #photo, #color { display: none }
+                </style>
+        </head>
+        <body>
+                <h1>New clothing item</h1>
+
+                <div>
+                        Image
+                        <div id="capture" class="camera">
+                                <video id="video">Video stream not available.</video><br/>
+                                <button id="startbutton">Take photo</button>
+                        </div>
+                        <canvas id="canvas"> </canvas>
+                        <div id="captureOutput" class="output">
+                                <img id="photo" alt="The screen capture will appear in this box." />
+
+                                <div>
+                                        Color
+                                        <input id="color" type="color"/>
+                                </div>
+                        </div>
+                </div>
+
+                <div>
+                        Type
+                        <select id="type" required>
+                                <option>Head</option>
+                                <option>Torso</option>
+                                <option>Lower Body</option>
+                                <option>Shoes</option>
+                                <option>Other</option>
+                        </select>
+                </div>
+
+                <div>
+                        Price
+                        <input id="price" min="1" type="number" required/> EUR
+                </div>
+
+                <div>
+                        Description
+                        <input id="description" type="text" placeholder="Optional description">       
+                </div>
+
+                <div>
+                        Purchase date
+                        <input id="date" type="date"/>
+                </div>
+
+                <div>
+                        <button>Add</button>
+                </div>
+        </body>
+</html>
