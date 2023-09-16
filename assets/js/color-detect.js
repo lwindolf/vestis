@@ -34,7 +34,7 @@ async function getImageFromBase64str(b64str) {
         await new Promise((r) => {
                 img.src = b64str;
                 img.onload = r;
-        })
+        });
 
         const colorThief = new ColorThief();
         const rgba = colorThief.getColor(img, 5);
@@ -49,7 +49,7 @@ async function getImageFromBase64str(b64str) {
 async function detectColor(id) {       
         var color;
         var s = document.getElementById(id).src;
-        s.substring("data:image/png;base64,".length, s.length)
+        s.substring("data:image/png;base64,".length, s.length);
         color = await getImageFromBase64str(document.getElementById(id).src);
 
         console.log("detected color "+color);
